@@ -50,3 +50,12 @@ const favoriteDinners = [
 ]
 
 // Lightning Exercise 2: Output all of the key/value pairs into the DOM inside an <article> element with a class of food.
+
+const foodContainer = document.querySelector('.food')
+foodContainer.innerHTML += `<h1>Favorite Dinners</h1>`
+
+favoriteDinners.forEach(favoriteDinner => {
+    for (const entry of Object.entries(favoriteDinner) ) {
+        foodContainer.innerHTML += `<div>${entry[0]}: ${entry[1]}</div>`
+    }
+})
